@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const icon = themeToggle.querySelector('i');
 
-    // Theme management
     function setTheme(theme) {
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initialize theme
     function initializeTheme() {
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -79,16 +77,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Toggle theme
     themeToggle.addEventListener('click', () => {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         setTheme(isDark ? 'light' : 'dark');
     });
 
-    // Initialize theme on load
     initializeTheme();
 
-    // Render projects
     projects.forEach(project => {
         const projectCard = document.createElement('div');
         projectCard.className = 'project-card';
