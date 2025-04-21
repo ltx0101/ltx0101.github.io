@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const projects = [
         {
             title: "SlimBrave",
-            description: "A lightweight version of Brave browser with essential features.",
+            description: "Debloat Brave for faster performance and smoother browsing.",
             repoUrl: "https://github.com/ltx0101/SlimBrave",
             imageUrl: "images/slimbrave.png"
         },
@@ -14,37 +14,37 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             title: "SlimFox",
-            description: "Lightweight Firefox variant optimized for performance.",
+            description: "Modify Firefox to optimize privacy, performance and other unwanted features.",
             repoUrl: "https://github.com/ltx0101/SlimFox",
             imageUrl: "images/slimfox.png"
         },
 		{
             title: "NanoCord",
-            description: "Minimalist Discord client with reduced resource usage.",
+            description: "NanoCord is a minimalist and optimized way to use Discord.",
             repoUrl: "https://github.com/ltx0101/NanoCord",
             imageUrl: "images/nanocord.png"
         },
         {
             title: "GOS",
-            description: "General Operating System utilities and tools.",
+            description: "Tune your PC for smoother, faster and better gaming.",
             repoUrl: "https://github.com/ltx0101/GOS",
             imageUrl: "images/gos.png"
         },
         {
             title: "MV2Switch",
-            description: "Tool for managing Manifest V2/V3 extensions.",
+            description: "Manage the Manifest V2 extension setting in Chromium browsers.",
             repoUrl: "https://github.com/ltx0101/MV2Switch",
             imageUrl: "images/github.png"
         },
 		{
             title: "DelayScope",
-            description: "Tool for measuring and analyzing network delays and latency.",
+            description: "Script that measures the system responsiveness in Windows.",
             repoUrl: "https://github.com/ltx0101/DelayScope",
             imageUrl: "images/github.png"
         },
         {
             title: "NVCacheCleaner",
-            description: "Utility for cleaning NVIDIA GPU cache files.",
+            description: "Clean up NVIDIA and shader cache files in Windows.",
             repoUrl: "https://github.com/ltx0101/NVCacheCleaner",
             imageUrl: "images/github.png"
         }
