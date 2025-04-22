@@ -4,49 +4,49 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "SlimBrave",
             description: "Debloat Brave for faster performance and smoother browsing.",
             repoUrl: "https://github.com/ltx0101/SlimBrave",
-            imageUrl: "images/slimbrave.png"
+            imageUrl: "images/slimbrave.webp"
         },
         {
             title: "StealthChrome",
             description: "Chrome browser modification for enhanced privacy and stealth browsing.",
             repoUrl: "https://github.com/ltx0101/StealthChrome",
-            imageUrl: "images/stealthchrome.png"
+            imageUrl: "images/stealthchrome.webp"
         },
         {
             title: "SlimFox",
             description: "Modify Firefox to optimize privacy, performance and other unwanted features.",
             repoUrl: "https://github.com/ltx0101/SlimFox",
-            imageUrl: "images/slimfox.png"
+            imageUrl: "images/slimfox.webp"
         },
 		{
             title: "NanoCord",
             description: "NanoCord is a minimalist and optimized way to use Discord.",
             repoUrl: "https://github.com/ltx0101/NanoCord",
-            imageUrl: "images/nanocord.png"
+            imageUrl: "images/nanocord.webp"
         },
         {
             title: "GOS",
             description: "Tune your PC for smoother, faster and better gaming.",
             repoUrl: "https://github.com/ltx0101/GOS",
-            imageUrl: "images/gos.png"
+            imageUrl: "images/gos.webp"
         },
         {
             title: "MV2Switch",
             description: "Manage the Manifest V2 extension setting in Chromium browsers.",
             repoUrl: "https://github.com/ltx0101/MV2Switch",
-            imageUrl: "images/github.png"
+            imageUrl: "images/github.webp"
         },
 		{
             title: "DelayScope",
             description: "Script that measures the system responsiveness in Windows.",
             repoUrl: "https://github.com/ltx0101/DelayScope",
-            imageUrl: "images/github.png"
+            imageUrl: "images/github.webp"
         },
         {
             title: "NVCacheCleaner",
             description: "Clean up NVIDIA and shader cache files in Windows.",
             repoUrl: "https://github.com/ltx0101/NVCacheCleaner",
-            imageUrl: "images/github.png"
+            imageUrl: "images/github.webp"
         }
     ];
 
