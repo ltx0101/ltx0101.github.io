@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             repoUrl: "https://github.com/ltx0101/SlimFox",
             imageUrl: "images/slimfox.webp"
         },
-		{
+        {
             title: "NanoCord",
             description: "NanoCord is a minimalist and optimized way to use Discord.",
             repoUrl: "https://github.com/ltx0101/NanoCord",
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             repoUrl: "https://github.com/ltx0101/MV2Switch",
             imageUrl: "images/github.webp"
         },
-		{
+        {
             title: "DelayScope",
             description: "Script that measures the system responsiveness in Windows.",
             repoUrl: "https://github.com/ltx0101/DelayScope",
@@ -49,23 +49,19 @@ document.addEventListener('DOMContentLoaded', function() {
             imageUrl: "images/github.webp"
         }
     ];
-
     const projectsGrid = document.querySelector('.projects-grid');
     const themeToggle = document.getElementById('theme-toggle');
     const icon = themeToggle.querySelector('i');
-
     function setTheme(theme) {
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            icon.classList.replace('fa-moon', 'fa-sun');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.removeAttribute('data-theme');
-            icon.classList.replace('fa-sun', 'fa-moon');
-            localStorage.setItem('theme', 'light');
-        }
+        const isDark = theme === 'dark';
+			if (isDark) {
+		document.documentElement.setAttribute('data-theme', 'dark');
+	} else {
+		document.documentElement.removeAttribute('data-theme');
+	}
+        icon.className = `fas fa-${isDark ? 'sun' : 'moon'}`;
+        localStorage.setItem('theme', theme);
     }
-
     function initializeTheme() {
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -76,21 +72,17 @@ document.addEventListener('DOMContentLoaded', function() {
             setTheme('dark');
         }
     }
-
     themeToggle.addEventListener('click', () => {
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const isDark = document.documentElement.hasAttribute('data-theme');
         setTheme(isDark ? 'light' : 'dark');
     });
-
     initializeTheme();
-
     projects.forEach(project => {
         const projectCard = document.createElement('div');
         projectCard.className = 'project-card';
-        
         projectCard.innerHTML = `
             <div class="project-image">
-                <img src="${project.imageUrl}" alt="${project.title}" loading="lazy">
+                <img src="${project.imageUrl}" alt="${project.title}" loading="lazy" width="200" height="150">
             </div>
             <div class="project-content">
                 <h2>${project.title}</h2>
@@ -102,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `;
-        
         projectsGrid.appendChild(projectCard);
     });
 });
