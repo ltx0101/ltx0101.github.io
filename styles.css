@@ -22,11 +22,14 @@
     box-sizing: border-box;
 }
 body {
-    transition: background-color 0.3s ease, color 0.3s ease;
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 header {
     background-color: var(--primary-color);
@@ -85,30 +88,33 @@ header p {
     box-shadow: var(--card-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: var(--card-text);
+    min-height: 400px;
 }
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 .project-image {
-    position: relative;
-    width: 100%;
-    padding-top: 50%;
     background-color: var(--card-bg);
+    aspect-ratio: 3 / 1;
+    width: 100%;
     overflow: hidden;
+    position: relative;
 }
 .project-image img {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
+    max-height: 170px;
+    max-width: 80%;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    object-position: center;
-    transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
 }
 .project-card:hover .project-image img {
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 .project-content {
     padding: 1.5rem;
@@ -117,7 +123,6 @@ header p {
 .project-content h2 {
     margin-bottom: 0.5rem;
     color: var(--primary-color);
-    text-align: center;
 }
 .project-content p {
     margin-bottom: 1rem;
@@ -182,5 +187,52 @@ footer a:hover {
     .theme-toggle {
         align-self: flex-end;
         margin-top: -40px;
+    }
+}
+.skeleton {
+    animation: fadeIn 0.3s ease-in-out;
+}
+.skeleton-box {
+    background-color: #e0e0e0;
+    aspect-ratio: 3 / 2;
+    width: 100%;
+    border-radius: 15px;
+}
+[data-theme=dark] .skeleton-box {
+    background-color: #2e2e2e;
+}
+.skeleton-text {
+    background-color: #e0e0e0;
+    height: 16px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.skeleton-text.title {
+    width: 60%;
+    height: 20px;
+}
+.skeleton-text.body {
+    width: 80%;
+}
+.skeleton-text.body.short {
+    width: 40%;
+}
+.skeleton-btn {
+    width: 100px;
+    height: 30px;
+    margin: 20px auto 0;
+    background-color: #e0e0e0;
+    border-radius: 35px;
+}
+[data-theme=dark] .skeleton-text,
+[data-theme=dark] .skeleton-btn {
+    background-color: #2e2e2e;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

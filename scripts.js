@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const projects = [
         {
             title: "SlimBrave",
@@ -65,35 +65,48 @@ document.addEventListener("DOMContentLoaded", function() {
     function loadTheme() {
         const savedTheme = localStorage.getItem("theme");
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        
-        if (savedTheme) {
-            setTheme(savedTheme);
-        } else if (prefersDark) {
-            setTheme("dark");
-        }
+        if (savedTheme) setTheme(savedTheme);
+        else if (prefersDark) setTheme("dark");
     }
     themeToggle.addEventListener("click", () => {
         const currentTheme = document.documentElement.hasAttribute("data-theme") ? "light" : "dark";
         setTheme(currentTheme);
     });
     loadTheme();
-    projects.forEach(project => {
-        const card = document.createElement("div");
-        card.className = "project-card";
-        card.innerHTML = `
-            <div class="project-image">
-                <img src="${project.imageUrl}" alt="${project.title}" loading="lazy" width="300" height="200">
-            </div>
+    projects.forEach(() => {
+        const skeleton = document.createElement("div");
+        skeleton.className = "project-card skeleton";
+        skeleton.innerHTML = `
+            <div class="project-image skeleton-box"></div>
             <div class="project-content">
-                <h2>${project.title}</h2>
-                <p>${project.description}</p>
-                <div class="project-links">
-                    <a href="${project.repoUrl}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
+                <div class="skeleton-text title"></div>
+                <div class="skeleton-text body"></div>
+                <div class="skeleton-text body short"></div>
+                <div class="skeleton-btn"></div>
             </div>
         `;
-        projectsGrid.appendChild(card);
+        projectsGrid.appendChild(skeleton);
     });
+    setTimeout(() => {
+        projectsGrid.innerHTML = "";
+        projects.forEach(project => {
+            const card = document.createElement("div");
+            card.className = "project-card";
+            card.innerHTML = `
+                <div class="project-image">
+                    <img src="${project.imageUrl}" alt="${project.title}" loading="lazy" width="300" height="200">
+                </div>
+                <div class="project-content">
+                    <h2>${project.title}</h2>
+                    <p>${project.description}</p>
+                    <div class="project-links">
+                        <a href="${project.repoUrl}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            `;
+            projectsGrid.appendChild(card);
+        });
+    }, 0);
 });
