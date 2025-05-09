@@ -7,7 +7,7 @@
   "theme_color": "#4d90fe",
   "icons": [
     {
-      "src": "/ltx.png",  //  Create this file (192x192 PNG)
+      "src": "/ltx.png",
       "sizes": "192x192",
       "type": "image/png"
     }
